@@ -37,13 +37,11 @@ public class UserController {
 
     @PutMapping(path = "/{userId}")
     public User updateUser(@PathVariable("userId") Long userId , @RequestBody UserRO userRO){
-        logger.info("User ID = "+userId);
         return userService.updateUser(userId, userRO);
     }
 
     @DeleteMapping(path = "/{userId}")
     public void deleteUser(@PathVariable("userId") Long userId){
-        logger.info("User ID = "+userId);
         userService.deleteUser(userId);
     }
 }
